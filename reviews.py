@@ -31,7 +31,7 @@ def preprocess(text):
         if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
             result.append(lemmatize_stemming(token))
     return result
-processed_docs = documents['reviews'].map(preprocess)
+processed_docs = documents['demojize_text'].map(preprocess)
 #bag of words
 dictionary = gensim.corpora.Dictionary(processed_docs)
 count = 0
