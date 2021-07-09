@@ -16,6 +16,8 @@ np.random.seed(2018)
 import nltk
 #nltk.download('wordnet')
 
+nltk.data.path.append('./nltk_data/')
+
 import pandas as pd
 data = pd.read_csv('LazadaReviews_en.csv', error_bad_lines=False);
 data = data.dropna(subset=['reviews'])
