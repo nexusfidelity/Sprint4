@@ -17,7 +17,7 @@ import nltk
 nltk.download('wordnet')
 
 import spacy
-nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_sm')
 
 import pandas as pd
 data = pd.read_csv('FinalDataset_202107100227.csv', error_bad_lines=False);
