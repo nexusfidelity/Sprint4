@@ -4,8 +4,6 @@ from PIL import Image
 
 #nltk initializers
 from nltk.sentiment import SentimentIntensityAnalyzer
-sia = SentimentIntensityAnalyzer()
-
 import gensim
 from gensim.utils import simple_preprocess
 from gensim.parsing.preprocessing import STOPWORDS
@@ -58,6 +56,8 @@ new_model = gensim.models.ldamodel.LdaModel.load('lda_model.model')
 
 output_scores = []
 output_topics = []
+sia = SentimentIntensityAnalyzer()
+
 
 #Streamlit section
 my_page = st.sidebar.radio('Sprint Navigation', ['Introduction', 'Data','Machine Learning','Demo','Contributors'])
