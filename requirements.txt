@@ -1,6 +1,7 @@
 streamlit
 
 gensim
+nltk
 
 Pillow
 Scrapy
