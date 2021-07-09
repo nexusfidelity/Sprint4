@@ -137,7 +137,7 @@ elif my_page == 'Demo':
         output_topics.append(new_model.print_topic(index, 5))
     
     
-    st.write(output_scores[0],'probability of review being part of these topics')
+    st.write(output_scores[0],'highest probability of review being part of these topics')
     
     s = output_topics[0].split("+",5)
     number_list = []
