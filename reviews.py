@@ -15,7 +15,7 @@ import nltk
 nltk.download('wordnet')
 
 import pandas as pd
-data = pd.read_csv('LazadaReviews_en.csv',error_bad_lines=False,encoding = 'utf-8')
+data = pd.read_csv('LazadaReviews_en.csv',error_bad_lines=False,encoding = 'latin-1')
 data = data.dropna(subset=['reviews'])
 data['reviews'] = data['reviews'].str.replace(r'[^\w\s]+', '')
 data_text = data[['reviews']]
