@@ -5,7 +5,6 @@ numpy
 
 gensim
 nltk
-spacy
 
 Pillow
 Scrapy
