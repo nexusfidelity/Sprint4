@@ -14,7 +14,7 @@ from nltk.stem.porter import *
 import numpy as np
 np.random.seed(2018)
 import nltk
-nltk.download('wordnet')
+#nltk.download('wordnet')
 
 import pandas as pd
 data = pd.read_csv('LazadaReviews_en.csv', error_bad_lines=False);
