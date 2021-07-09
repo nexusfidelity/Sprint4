@@ -2,64 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
 
-#nltk initializers
-from nltk.sentiment import SentimentIntensityAnalyzer
-sia = SentimentIntensityAnalyzer()
-
-import gensim
-from gensim.utils import simple_preprocess
-from gensim.parsing.preprocessing import STOPWORDS
-from nltk.stem import WordNetLemmatizer, SnowballStemmer
-from nltk.stem.porter import *
-import numpy as np
-np.random.seed(2018)
-import nltk
-nltk.download('wordnet')
-#nltk.data.path.append('./nltk_data/')
-
-import pandas as pd
-data = pd.read_csv('LazadaReviews_en.csv', error_bad_lines=False);
-data = data.dropna(subset=['reviews'])
-data['reviews'] = data['reviews'].str.replace(r'[^\w\s]+', '')
-data_text = data[['reviews']]
-data_text['index'] = data_text.index
-documents = data_text
-
-stemmer = SnowballStemmer('english')
-def lemmatize_stemming(text):
-    return stemmer.stem(WordNetLemmatizer().lemmatize(text, pos='v'))
-def preprocess(text):
-    result = []
-    for token in gensim.utils.simple_preprocess(text):
-        if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
-            result.append(lemmatize_stemming(token))
-    return result
-processed_docs = documents['reviews'].map(preprocess)
-#bag of words
-dictionary = gensim.corpora.Dictionary(processed_docs)
-count = 0
-for k, v in dictionary.iteritems():
-#     print(k, v)
-    count += 1
-    if count > 10:
-        break
-
-
-#bag of words
-dictionary = gensim.corpora.Dictionary(processed_docs)
-count = 0
-for k, v in dictionary.iteritems():
-    print(k, v)
-    count += 1
-    if count > 10:
-        break
-        
-from gensim import models
-new_model = gensim.models.ldamodel.LdaModel.load('lda_model.model')
-
-output_scores = []
-output_topics = []
-
 #Streamlit section
 my_page = st.sidebar.radio('Sprint Navigation', ['Introduction', 'Data','Machine Learning','Demo','Contributors'])
 
@@ -105,11 +47,6 @@ elif my_page == 'Machine Learning':
     
     st.header("LDA")
     st.markdown('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius dolor vel dolor tempus, vel gravida lorem finibus. Integer placerat placerat dolor, non lacinia lectus. Ut et dolor ultrices, viverra nibh non, laoreet leo. Ut sed mi in risus aliquam accumsan sit amet at nisl. Etiam tempus sapien ante, mattis rhoncus elit elementum vitae. Morbi eget lacus nec nibh ultrices varius eget sit amet nibh. Donec aliquam nunc sit amet sagittis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam purus tellus, bibendum et condimentum pellentesque, efficitur non nisl. Curabitur cursus maximus est ut malesuada. Vestibulum ultricies sollicitudin dapibus. Morbi a sollicitudin elit, eu varius ligula. Pellentesque at semper nisl, at placerat lacus.',unsafe_allow_html=False)
-    
-#     st.image(knn1)
-    
-    
-#     st.image(knn2)
 
 elif my_page == 'Demo':
     st.title("Review Analyzer")
@@ -120,55 +57,7 @@ elif my_page == 'Demo':
     user_input = st.text_input("submit your review here")
     st.markdown('YOUR REVIEW')
     st.markdown(user_input)
-    
-    positive = sia.polarity_scores(user_input)['pos']
-    negative = sia.polarity_scores(user_input)['neg']
-    if positive > negative:
-        st.header('positive review')
-    elif positive < negative:
-        st.header('negative review')
-    else:
-        st.header('neutral review')
-       
-    dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000)
-    bow_vector = dictionary.doc2bow(preprocess(user_input))
 
-    for index, score in sorted(new_model[bow_vector], key=lambda tup: -1*tup[1]):
-        output_scores.append(score)
-        output_topics.append(new_model.print_topic(index, 5))
-    
-    
-    st.write(output_scores[0],'probability of review being part of these topics')
-    
-    s = output_topics[0].split("+",5)
-    number_list = []
-    number = 0
-    while number < len(s):
-        number_pro = float(s[number].split('*',1)[0])
-        number_list.append(number_pro)
-        number = number + 1
-    #calculations to enlarge pie
-    summer = sum(number_list)
-    missing = 1 - summer
-    portion = missing / len(number_list)
-    new_portions = [x+portion for x in number_list]
-    multiplied_portions = [x*100 for x in number_list]
-    # get word list
-    word_list = []
-    word = 0
-    while word < len(s):
-        word_pro = s[word].split('*',1)[1]
-        word_pro = word_pro.replace('"','') #and word_pro.replace(" ","")
-        word_list.append(word_pro)
-        word = word + 1
-    
-    from matplotlib import pyplot as plt
-    import numpy as np
-    fig = plt.figure()
-    ax = fig.add_axes([0,0,1,1])
-    ax.axis('equal')
-    ax.pie(multiplied_portions, labels = word_list,autopct='%1.2f%%')
-    st.pyplot(fig)
     
 elif my_page == 'Contributors':
 
