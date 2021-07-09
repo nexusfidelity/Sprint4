@@ -15,12 +15,13 @@ import nltk
 nltk.download('wordnet')
 
 import pandas as pd
-data = pd.read_csv('LazadaReviews_en.csv',error_bad_lines=False,encoding = 'latin-1')
-data = data.dropna(subset=['reviews'])
-data['reviews'] = data['reviews'].str.replace(r'[^\w\s]+', '')
-data_text = data[['reviews']]
+data = pd.read_csv('FinalDataset_202107100227.csv', error_bad_lines=False);
+data = data.dropna(subset=['demojize_text'])
+data['demojize_text'] = data['demojize_text'].str.replace(r'[^\w\s]+', '')
+data_text = data[['demojize_text']]
 data_text['index'] = data_text.index
 documents = data_text
+documents
 
 stemmer = SnowballStemmer('english')
 def lemmatize_stemming(text):
@@ -52,7 +53,7 @@ for k, v in dictionary.iteritems():
         break
         
 from gensim import models
-new_model = gensim.models.ldamodel.LdaModel.load('lda_model.model')
+new_model = gensim.models.ldamodel.LdaModel.load('LDA_MODEL')
 
 output_scores = []
 output_topics = []
