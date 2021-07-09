@@ -136,9 +136,6 @@ elif my_page == 'Demo':
         output_scores.append(score)
         output_topics.append(new_model.print_topic(index, 5))
     
-    
-    st.write(output_scores[0],'highest probability of review being part of these topics')
-    
     s = output_topics[0].split("+",5)
     number_list = []
     number = 0
@@ -161,7 +158,7 @@ elif my_page == 'Demo':
         word_list.append(word_pro)
         word = word + 1
     
-    st.write('therefore, your review has the highest probability of being part of the topic (',word_list[0],') with the weight of:',multiplied_portions[0])
+    st.write('therefore, your review has the',output_scores[0],' highest probability of being part of the topic (',word_list[0],') with the weight of:',multiplied_portions[0],'%')
     
     from matplotlib import pyplot as plt
     import numpy as np
