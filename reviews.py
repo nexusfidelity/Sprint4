@@ -21,7 +21,6 @@ data['demojize_text'] = data['demojize_text'].str.replace(r'[^\w\s]+', '')
 data_text = data[['demojize_text']]
 data_text['index'] = data_text.index
 documents = data_text
-documents
 
 stemmer = SnowballStemmer('english')
 def lemmatize_stemming(text):
@@ -67,7 +66,6 @@ if my_page == 'Introduction':
     st.title("Introduction")
     
     st.header("Problem Statement")
-#     st.image(banner)
     st.markdown('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius dolor vel dolor tempus, vel gravida lorem finibus. Integer placerat placerat dolor, non lacinia lectus. Ut et dolor ultrices, viverra nibh non, laoreet leo. Ut sed mi in risus aliquam accumsan sit amet at nisl. Etiam tempus sapien ante, mattis rhoncus elit elementum vitae. Morbi eget lacus nec nibh ultrices varius eget sit amet nibh. Donec aliquam nunc sit amet sagittis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam purus tellus, bibendum et condimentum pellentesque, efficitur non nisl. Curabitur cursus maximus est ut malesuada. Vestibulum ultricies sollicitudin dapibus. Morbi a sollicitudin elit, eu varius ligula. Pellentesque at semper nisl, at placerat lacus.',unsafe_allow_html=False)
     
     st.header("Objectives")
@@ -98,7 +96,6 @@ elif my_page == 'Machine Learning':
     
     st.header("Bag of Words")
     st.markdown('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius dolor vel dolor tempus, vel gravida lorem finibus. Integer placerat placerat dolor, non lacinia lectus. Ut et dolor ultrices, viverra nibh non, laoreet leo. Ut sed mi in risus aliquam accumsan sit amet at nisl. Etiam tempus sapien ante, mattis rhoncus elit elementum vitae. Morbi eget lacus nec nibh ultrices varius eget sit amet nibh. Donec aliquam nunc sit amet sagittis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam purus tellus, bibendum et condimentum pellentesque, efficitur non nisl. Curabitur cursus maximus est ut malesuada. Vestibulum ultricies sollicitudin dapibus. Morbi a sollicitudin elit, eu varius ligula. Pellentesque at semper nisl, at placerat lacus.',unsafe_allow_html=False)
-    
     
     st.header("IDF")
     st.markdown('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque varius dolor vel dolor tempus, vel gravida lorem finibus. Integer placerat placerat dolor, non lacinia lectus. Ut et dolor ultrices, viverra nibh non, laoreet leo. Ut sed mi in risus aliquam accumsan sit amet at nisl. Etiam tempus sapien ante, mattis rhoncus elit elementum vitae. Morbi eget lacus nec nibh ultrices varius eget sit amet nibh. Donec aliquam nunc sit amet sagittis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam purus tellus, bibendum et condimentum pellentesque, efficitur non nisl. Curabitur cursus maximus est ut malesuada. Vestibulum ultricies sollicitudin dapibus. Morbi a sollicitudin elit, eu varius ligula. Pellentesque at semper nisl, at placerat lacus.',unsafe_allow_html=False)
