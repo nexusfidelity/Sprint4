@@ -168,67 +168,71 @@ elif my_page == 'Demo':
     
 elif my_page == 'Contributors':
 
-    st.header('The Team')
-    
-    st.markdown('We are proud to present our research and are avid fans of Davide Guetta. We wish for David Guetta, good health and good beats.',unsafe_allow_html=False)
+    col1, col2 = st.beta_columns([0.5, 4])
+
+    col2.write('<span style="font-size:30px; color:#0c45a6"><b>The Team</b></span><br>',
+               unsafe_allow_html=True)
+    st.write('---------------------')
 
     col1, col2, col3 = st.beta_columns(3)
-    
+
     with col1:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="fidel-ivan-racines-187477167" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/fidel-ivan-racines-187477167?trk=profile-badge">Fidel Ivan Racines</a></div>'''
-                              ,height=350)
-    
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" 
+        async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" 
+        data-type="HORIZONTAL" data-vanity="cabenignos" data-version="v1">
+        <a class="badge-base__link LI-simple-link" 
+        href="https://ph.linkedin.com/in/cabenignos?trk=profile-badge"></a></div>''', height=350)
+
     with col2:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="jon-marco-francisco-77592214a" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/jon-marco-francisco-77592214a?trk=profile-badge%22%3EJon Marco Francisco</a></div>'''
-                              ,height=350)
-    
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" 
+        async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" 
+        data-type="HORIZONTAL" data-vanity="christopher-louie-jay-gemida-02b083144" data-version="v1">
+        <a class="badge-base__link LI-simple-link" 
+        href="https://ph.linkedin.com/in/christopher-louie-jay-gemida-02b083144?trk=profile-badge"></a></div>''',
+                              height=350)
+
     with col3:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="ajloconer" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajloconer?trk=profile-badge%22%3EAndrew Justin Oconer</a></div>'''
-                              ,height=350)
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" 
+        async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" 
+        data-type="HORIZONTAL" data-vanity="fidel-ivan-racines-187477167" data-version="v1">
+        <a class="badge-base__link LI-simple-link" 
+        href="https://ph.linkedin.com/in/fidel-ivan-racines-187477167?trk=profile-badge"></a></div>'''
+                              , height=350)
 
-    col4, col5, col6 = st.beta_columns(3)
+    with col1:
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="ajloconer" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajloconer?trk=profile-badge%22%3EAndrew Justin Oconer</a></div>''',height=350)
 
-    with col4:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="preciouseunicegrullo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/preciouseunicegrullo?trk=profile-badge%22%3EPrecious Eunice Grullo</a></div>'''
-                              ,height=350)
+    with col2:
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js"
+        async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light"
+        data-type="HORIZONTAL" data-vanity="matthew-antoine-tomas-32011773" data-version="v1">
+        <a class="badge-base__link LI-simple-link"
+        href="https://ph.linkedin.com/in/matthew-antoine-tomas-32011773?trk=profile-badge"></a></div>''',height=350)
         
-    with col5:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="adrianjanairo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/adrianjanairo?trk=profile-badge%22%3EAdrian Genevie Janairo</a></div>'''
-                              ,height=350)
-        
-    with col6:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="reiniel-dan-pablo-5197641b4" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/reiniel-dan-pablo-5197641b4?trk=profile-badge%22%3EReiniel Dan Pablo</a></div>
-                              ''', height=350)
-        
-    st.header('The Mentor')
-    
-    st.markdown('Our mentor has helped and guided us through out the process of this study.',unsafe_allow_html=False)
-    
-    col7, col8, col9 = st.beta_columns(3)
-    
-    with col7:
-        st.components.v1.html('''''', height=350)
-        
-    with col8:
-        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="patricknuguid" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/patricknuguid?trk=profile-badge%22%3EPatrick Nuguid</a></div>'''
-                              ,height=350)
-        
-    with col9:
-        st.components.v1.html('''''', height=350)
+    with col3:
+        st.components.v1.html('''<script src="https://platform.linkedin.com/badges/js/profile.js" 
+        async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" 
+        data-type="HORIZONTAL" data-vanity="renzo-luis-rodelas-54541b18b" data-version="v1">
+        <a class="badge-base__link LI-simple-link" 
+        href="https://ph.linkedin.com/in/renzo-luis-rodelas-54541b18b?trk=profile-badge"></a></div>''', height=350)
         
     st.header('The Organization')
+    st.markdown('Eskwelabs is an online data upskilling school for people and teams in Southeast Asia. Who gives '
+                'access opportunities in the future of work through accessible data skills that are high in-demand as '
+                'the amount of data in the world increases exponentially.', unsafe_allow_html=False)
     
-#     st.image(banner2)
+    st.markdown('Our mission is to give access to engaging and future-relevant skills education is then crucial to help'
+                ' people and teams thrive in that future. In Southeast Asia, where more than half of the population is '
+                'under the age of 30, we believe data education can democratize access to meaningful careers for '
+                'workers and sustainable competitiveness for companies.', unsafe_allow_html=False)
     
-    st.markdown('Eskwelabs is an online data upskilling school for people and teams in Southeast Asia. Who gives access opportunities in the future of work through accessible data skills that are high in-demand as the amount of data in the world increases exponentially.',unsafe_allow_html=False)
-    
-    st.markdown('Our mission is to give access to engaging and future-relevant skills education is then crucial to help people and teams thrive in that future. In Southeast Asia, where more than half of the population is under the age of 30, we believe data education can democratize access to meaningful careers for workers and sustainable competitiveness for companies.',unsafe_allow_html=False)
-    
-    st.markdown('At the same time, learning happens in all kinds of ways. Many learning environments, both in school and online, rely on lecture formats which are rarely engaging and effective for technical skills. Eskwelabs aims to enable participatory and active learning experiences so beyond acquiring in-demand skills, we can also rediscover the joy of learning and reinventing ourselves.',unsafe_allow_html=False)
+    st.markdown('At the same time, learning happens in all kinds of ways. Many learning environments, both in school '
+                'and online, rely on lecture formats which are rarely engaging and effective for technical skills. '
+                'Eskwelabs aims to enable participatory and active learning experiences so beyond acquiring in-demand '
+                'skills, we can also rediscover the joy of learning and reinventing ourselves.',
+                unsafe_allow_html=False)
