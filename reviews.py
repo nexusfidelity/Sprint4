@@ -151,7 +151,7 @@ elif my_page == 'Demo':
     missing = 1 - summer
     portion = missing / len(number_list)
     new_portions = [x+portion for x in number_list]
-    multiplied_portions = [x*100 for x in number_list]
+    multiplied_portions = [x*100 for x in new_portions]
     # get word list
     word_list = []
     word = 0
@@ -160,6 +160,8 @@ elif my_page == 'Demo':
         word_pro = word_pro.replace('"','') #and word_pro.replace(" ","")
         word_list.append(word_pro)
         word = word + 1
+    
+    st.write('therefore, your review has the highest probability of being part of the topic (',word_list[0],') with the weight of:',multiplied_portions[0])
     
     from matplotlib import pyplot as plt
     import numpy as np
