@@ -1,0 +1,14 @@
+0# unseen_document = 'The design is beautiful, the fabric is just fine, it\'s not thick, it\'s not too thin, it\'s just right for the price'
+1# unseen_document = 'Received my order in good condition. It was highly secured and  taken care off by the courier.  A very good item to haved.More goods to buy and purchase this seller, good quality for its price defitnely will order again'
+2# unseen_document = 'product is good but delivery is slow, I hate you because the product is excellent quality. I am impatient because the delivery is moderate'
+2# unseen_document = 'No issues experienced so far, but when I got it, the bubble wrap is ripped. The factory seal has also been been tampered, but the seller said they only tested it before shipping, they should have informed me about the opened seal, I thought I was scammed or it was opened by NinjaVan'
+3# unseen_document = 'I hate the product, it broke down easily'
+4# unseen_document = 'thanks seller, fast delivery'
+4# unseen_document = 'thanks fast delivery. no damage'
+4# unseen_document = 'another item not funny plain I ordered but it came'
+
+topic segment 0 = dayswow vidpic admit thank scam pack happi loud pagkaka order actual sellerheart seal good go bago lodz build store miss
+topic segment 1 = box niya scam nilagay vidpic narec happi loud respons pack bago imag seal nung tamper pagkaka actual dayswow bubbl appear
+topic segment 2 = ibang legit naramdaman vidpic note happy kabitan need scammed medju lata actual immediately mabilis sellerheart admit tamper support pack include
+topic segment 3 = game vidpic admit thank scammed fragile happy heart mabilis ibang actual deliveryitem seal good go asus easy build bleed apology
+topic segment 4 = note naramdaman scammed include vidpic itong happy heart niya fragile asus show seal state tamper mabilis actual game bubble thumb
